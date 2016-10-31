@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titulo:</strong>
+  <%= @post.titulo %>
+</p>
+
+<p>
+  <strong>Autor:</strong>
+  <%= @post.autor %>
+</p>
+
+<p>
+  <strong>Abstract:</strong>
+  <%= @post.abstract %>
+</p>
+
+<p>
+  <strong>Conteudo:</strong>
+  <%= @post.conteudo %>
+</p>
+<%= image_tag @post.avatar.url(:medium) %>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>

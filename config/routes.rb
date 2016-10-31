@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :posts
   get 'dashboard/home'
 
   devise_for :users
