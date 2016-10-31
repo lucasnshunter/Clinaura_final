@@ -1,12 +1,12 @@
 class PostsController < ApplicationController
-  
+  before_action :authenticate_user!
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   # GET /posts
   # GET /posts.json
   def index
      
-    @posts = Post.most_recent.paginate(page: params[:page],per_page: 4)
+    @posts = Post.most_recent.paginate(page: params[:page],per_page: 10)
   end
 
   # GET /posts/1

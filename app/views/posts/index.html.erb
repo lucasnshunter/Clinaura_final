@@ -1,49 +1,44 @@
 <p id="notice"><%= notice %></p>
 
 
-  <tbody>
-    <% @posts.each do |post| %>
+  
+  
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Lista dde postagens</h3>
+  </div>
+  <div class="panel-body">
+     <% @posts.each do |post| %>
       
-
- <!-- Page Content -->
-    <div class="container">
-
-        <div class="row">
-
-            <!-- Blog Entries Column -->
-            <div class="col-md-8">
-
-                <h1 class="page-header">
-                    Blog Padrão
-                    <small>Postagens</small>
-                </h1>
-
-                <!-- First Blog Post -->
-                <h2>
-                    <%= post.titulo %>
-                </h2>
-                <p class="lead">
-                    by <%= post.autor %>
-                </p>
-                <p><span class="glyphicon glyphicon-time"></span> Postado em  <%=post.created_at%></p>
-                <hr>
-                <%= image_tag post.avatar.url(:medium) %>
-                <hr>
-                <%= post.abstract.html_safe %>
-                <%= link_to 'Leia mais', post,class:"btn btn-primary" %>
-
-                <hr>
-<td><%= link_to 'Edit', edit_post_path(post) %></td>
-<td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-
-
-                
-<% end %>
-<%=will_paginate @posts,class:"pager"%>
-                <!-- Pager -->
-                
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>Titulo</td>
+            <td>Autor</td>
+            <td>Data</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+           <td><%= post.titulo %></td>
+           <td><%= post.autor %></td>
+           <td><%=post.created_at%></td>
+           <td> <%= link_to 'Leia mais', post,class:"btn btn-primary" %></td>
+           <td><%= link_to 'Editar', edit_post_path(post),class:"btn btn-success" %></td>
+           <td><%= link_to 'Apagar', post, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-danger" %></td>
+        </tr>
+    </tbody>
+</table>
+                <% end %>
+                <%=will_paginate @posts,class:"pager"%>
+                                <!-- Pager -->
+                                
             </div>
-
+  </div>
+</div>
 
                
 

@@ -1,0 +1,64 @@
+
+<!-- Navigation -->
+    
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+
+            <!-- Blog Post Content Column -->
+            <div class="col-lg-8">
+
+                <!-- Blog Post -->
+
+                <!-- Title -->
+                <h1><%= @post.titulo %></h1>
+
+                <!-- Author -->
+                <p class="lead">
+                    by <%= @post.autor %>
+                </p>
+
+                <hr>
+
+                <!-- Date/Time -->
+                <p><span class="glyphicon glyphicon-time"></span> Postado em <%=@post.created_at%></p>
+
+                <hr>
+
+                <!-- Preview Image -->
+              <center><%= image_tag @post.avatar.url(:medium) %></center>  
+
+                <hr>
+
+                <!-- Post Content -->
+                <p class="lead"><%= @post.abstract.html_safe %></p>
+                <br>
+                <p><%= @post.conteudo.html_safe %></p>
+
+                <hr>
+
+                
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Your Website 2014</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
