@@ -36,9 +36,9 @@
                 <hr>
 
                 <!-- Post Content -->
-                <p class="lead"><%= @post.abstract %></p>
+                <p class="lead"><%= @post.abstract.html_safe %></p>
                 <br>
-                <p><%= @post.conteudo %></p>
+                <p><%= @post.conteudo.html_safe %></p>
 
                 <hr>
 

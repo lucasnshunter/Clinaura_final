@@ -29,7 +29,7 @@
                 <hr>
                 <%= image_tag post.avatar.url(:medium) %>
                 <hr>
-                <%= post.abstract %>
+                <%= post.abstract.html_safe %>
                 <%= link_to 'Leia mais', post,class:"btn btn-primary" %>
 
                 <hr>
