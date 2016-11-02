@@ -17,7 +17,7 @@
             <td>Autor</td>
             <td>Data</td>
             <td></td>
-            <td></td>
+            
             <td></td>
         </tr>
     </thead>
@@ -27,7 +27,7 @@
            <td><%= post.autor %></td>
            <td><%=post.created_at%></td>
            <td> <%= link_to 'Leia mais', post,class:"btn btn-primary" %></td>
-           <td><%= link_to 'Editar', edit_post_path(post),class:"btn btn-success" %></td>
+           
            <td><%= link_to 'Apagar', post, method: :delete, data: { confirm: 'Are you sure?' },class:"btn btn-danger" %></td>
         </tr>
     </tbody>
