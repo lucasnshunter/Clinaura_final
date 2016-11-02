@@ -1,0 +1,75 @@
+<section id="blog">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title text-center wow fadeInDown">ultimas postagens</h2>
+                <p class="text-center wow fadeInDown">aqui inicia seu blog <br> ainda não decidi como vamos fazer o conteudo, eu sugiro que seja por mudança de pagina </p>
+            </div>
+
+            <div class="row">
+                
+                
+                
+                
+              
+        
+        <% @posts.each do |post| %>
+                
+                
+                <div class="col-sm-4">
+                    <div class="blog-post blog-large wow fadeInLeft" data-wow-duration="300ms" data-wow-delay="0ms">
+                        <article>
+                            <header class="entry-header">
+                                <div class="entry-thumbnail">
+                                     <%= image_tag post.avatar.url(:medium) %>
+                                    
+                            <span class="post-format post-format-video"><i class="fa fa-file-text"></i></span>
+                                </div>
+                                <div class="entry-date"><%= post.created_at %></div>
+                                <h2 class="entry-title"><a href="#"><%= post.titulo %></a></h2>
+                            </header>
+
+                            <div class="entry-content">
+                                <div  >
+                                <P id="postagem"><%= post.abstract.html_safe %>...</P>
+                                </div>
+                               <form action="blog/show" method="post">
+                                <INPUT TYPE="hidden" NAME="_id" VALUE=<%= post.id %>>
+                                     
+                                <button type="submit" class="btn btn-primary">Leia mais</button>
+                            </form>
+                            </div>
+
+                            <footer class="entry-meta">
+                                <span class="entry-author"><i class="fa fa-pencil"></i> <a href="#"><%= post.autor %></a></span>
+                               
+                            </footer>
+                        </article>
+                    </div>
+                </div><!--/.col-sm-6-->
+
+            <% end %>
+                
+                   
+                </div>
+            </div>
+
+        </div>
+        <br>
+        <br>
+        <br>
+        <style>
+       
+
+#postagem {
+    white-space: nowrap; 
+    width: 20em; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+   
+}
+        </style>
+       
+
+
+
+    </section>

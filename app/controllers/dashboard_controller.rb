@@ -1,6 +1,14 @@
 class DashboardController < ApplicationController
-  before_action :authenticate_user!
+    before_action :authenticate_user!
   def home
-     @contexto_view="index"
+  end
+
+  def site
+  end
+
+  def blog
+  end
+
+  def loja
   end
 end

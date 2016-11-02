@@ -12,7 +12,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+                
+               
+               <%= link_to "Viver Psicopedagogia", root_path,class:"fa fa-desktop fa-2x"  %>
+
+                <br>
             </div>
             <!-- /.navbar-header -->
 
@@ -20,52 +24,46 @@
                 <% if user_signed_in? %>
                 <strong><%= current_user.email %></strong>.
 
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
-                        <li> <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link fa fa-gear fa-fw'  %>
-                        </li>
-                        <li class="divider"></li>
-                        <li> <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link fa fa-sign-out fa-fw'  %>
-                        </li>
-                        
-
-                    </ul>
-                    
-                    <!-- /.dropdown-user -->
+                  <li class="dropdown">
+                    <div class="dropdown">
+                  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                 Usuario
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link fa fa-gear fa-fw'  %></a></li>
+                    <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link fa fa-sign-out fa-fw'  %></li>
+                  </ul>
+                </div>
                 </li>
-                <%end%>
                 <!-- /.dropdown -->
                
             </ul>
+            <%end%>
            
-            
           
             <!-- /.navbar-top-links -->
 
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
-                        <li class="sidebar-search">
-                            <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Search...">
-                                <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </span>
-                            </div>
-                            <!-- /input-group -->
-                        </li>
+                        
+                      
+                        
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dahboard</a>
+                             <a href="#"><i class="fa fa-book fa-fw"></i> Manuais<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                               
+                                <li>
+                                     <%= link_to 'Blog', dashboard_blog_path %>
+                                </li>
+                                 <li>
+                                     <%= link_to 'Loja', dashboard_site_path %>
+                                </li>
+                                
+                            </ul>
+                            <!-- /.nav-second-level -->
                         </li>
-                        
-                        
                        
                         <li>
                             <a href="#"><i class="fa fa-file-text fa-fw"></i> Blog<span class="fa arrow"></span></a>
@@ -80,33 +78,14 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-                        <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> menu com mult-nivel<span class="fa arrow"></span></a>
+                         <li>
+                            <a href="#"><i class="fa fa-money fa-fw"></i> loja<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">Second Level Item</a>
+                                    <a href="http://admin.iluria.com/public/login.jsp">Ir para Loja</a>
                                 </li>
-                                <li>
-                                    <a href="#">Second Level Item</a>
-                                </li>
-                                <li>
-                                    <a href="#">Third Level <span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                    </ul>
-                                    <!-- /.nav-third-level -->
-                                </li>
+                                
+                                
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>

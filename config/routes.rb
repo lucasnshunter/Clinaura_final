@@ -1,12 +1,29 @@
 Rails.application.routes.draw do
+  get 'dashboard/home'
+
+  get 'dashboard/site'
+
+  get 'dashboard/blog'
+
+  get 'dashboard/loja'
+
   get 'blog/index'
 
   #get 'blog/show'
+  
+  
   
   post 'blog/show'
 
   resources :posts
   get 'dashboard/home'
+  
+  get 'dashbaord/blog'
+  
+  get 'dashbaord/site'
+  
+  get 'dashbaord/loja'
+  
 
   devise_for :users
   get 'home/index'
